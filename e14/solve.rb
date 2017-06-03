@@ -1,6 +1,51 @@
+PATTERN=[
+  [4,3,[[[0,0],[2,0]],[[1,0],[1,2]],[[1,1],[1,3]]]],
+  [4,3,[[[0,0],[2,1]],[[1,0],[1,2]],[[1,1],[1,3]]]],
+  [4,3,[[[0,0],[2,2]],[[1,0],[1,2]],[[1,1],[1,3]]]],
+  [4,3,[[[0,0],[2,3]],[[1,0],[1,2]],[[1,1],[1,3]]]],
+  [4,3,[[[0,1],[2,1]],[[1,0],[1,2]],[[1,1],[1,3]]]],
+  [4,3,[[[0,1],[2,2]],[[1,0],[1,2]],[[1,1],[1,3]]]],
+  [4,3,[[[0,0],[1,2]],[[0,1],[2,2]],[[1,1],[1,3]]]],
+  [4,3,[[[0,0],[1,2]],[[0,1],[2,1]],[[1,1],[1,3]]]],
+  [4,3,[[[0,0],[1,2]],[[0,1],[2,2]],[[1,1],[2,3]]]],
+  [4,3,[[[0,0],[1,2]],[[0,1],[2,3]],[[1,1],[1,3]]]],
+  [5,2,[[[0,0],[0,2]],[[0,1],[1,3]],[[1,2],[1,4]]]],
+]
+def valid f,x,y,pat
+  #p [f,x,y,pat]
+  4.times.any?{|pos|
+    ybase,yc=pos<2 ? [0,1] : [pat[1]-1,-1]
+    xbase,xc=pos%2<1 ? [0,1] : [pat[0]-1,-1]
+    me=[]
+    pat[2].each_with_index{|pair,i|
+      nums=pair.map{|yoff,xoff|f[y+ybase+yc*yoff][x+xbase+xc*xoff]}
+      #p [x,y,pos,i,pair,nums]
+      break if nums[0]+nums[1]!=7
+      me[i]=nums.min
+    } or next
+    me.sort==[1,2,3]
+  }
+end
 def solve input
   # implement
-
+  f=input.split(?,).map{|s|s.chars.map(&:to_i)}
+  nx,ny=f[0].size,f.size
+  ft=(0...nx).map{|x| (0...ny).map{|y| f[y][x] } }
+  PATTERN.any?{|pat|
+    px,py=pat[0,2]
+    nx>=px&&ny>=py&&
+    (0..ny-py).any?{|y|
+      (0..nx-px).any?{|x|
+        valid(f,x,y,pat)
+      }
+    } ||
+    ny>=px&&nx>=py&&
+    (0..nx-py).any?{|y|
+      (0..ny-px).any?{|x|
+        valid(ft,x,y,pat)
+      }
+    }
+  }
 end
 
 def test(n,input,expected)
