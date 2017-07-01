@@ -1,6 +1,20 @@
 def solve input
   # implement
-
+  ->n{
+    t=?0+n.to_s(3)
+    a=[]
+    case n%3
+    when 0
+      a.push(t.sub(/.0*$/){|m|?0+m[0]*(m.size-1)}.to_i(3)) if n!=0
+      a.push(n+1,n+2)
+    when 1
+      a.push(t.sub(/01+$/){|m|?1+?0*(m.size-1)}.to_i(3)) if  t[/01+$/]
+      a.unshift(n-1)
+    when 2
+      a.push(t.sub(/02+$/){|m|?2+?0*(m.size-1)}.to_i(3)) if  t[/02+$/]
+      a.unshift(n-2)
+    end
+  }[input.to_i]*?,
 end
 
 def test(n,input,expected)
