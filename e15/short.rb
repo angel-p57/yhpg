@@ -7,7 +7,7 @@ def solve input
     a.push(n+1,n+2)
   else
     a.push(n-n%3)
-    a.push(t.sub(/0([^0])\1*$/){|m|m[-1]+?0*(m.size-1)}.to_i(3)) if t[/0([^0])\1*$/]
+    a.push(($`+$&[-1]+?0*($&.size-1)).to_i(3)) if t[/0([^0])\1*$/]
   end
   a*?,
 end
