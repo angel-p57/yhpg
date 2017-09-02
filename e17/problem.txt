@@ -1,0 +1,5 @@
+# yhpg e17 2017.9.2
+## 問題
+回文数の数
+
+see: http://nabetani.sakura.ne.jp/hena/orde17palin/
