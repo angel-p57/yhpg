@@ -1,0 +1,5 @@
+# yhpg e18 2018.10.7
+## 問題
+ドット直角三角形の共通部分
+
+see: http://nabetani.sakura.ne.jp/hena/orde18twintri/
