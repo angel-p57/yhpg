@@ -1,0 +1,5 @@
+# yhpg e19 2017.11.4
+## 問題
+カード当てゲーム
+
+see: https://mtsmfm.github.io/2017/11/04/doukaku-e19.html
