@@ -1,11 +1,9 @@
 def solve s
-  a=*1..9
-  s.bytes{|c|
+  s.each_byte.with_object([*1..9]){|c,a|
     t,s=[1,0,-3,-6,-1,8,3,-2][(c-=97)/3*2,2]
     w=(c%3*3/t+s).abs.step(by:t).take(3)
     w.map{|i|a[i]}.rotate.zip(w){|e,i|a[i]=e}
-  }
-  a.each_slice(3).map{|r|r*""}*?/
+  }.each_slice(3).map(&:join)*?/
 end
 puts (<<E).split(?\n).map{|s|s=~/..(\d+).*"(.*)", *"(.*)"/;[$1,solve($2)==$3?"ok":"ng"]*?:}
 /*0*/ test( "aegj", "286/435/971" );
