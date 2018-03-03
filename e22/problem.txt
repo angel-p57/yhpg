@@ -1,0 +1,5 @@
+# yhpg e22 2018.3.3
+## 問題
+辞書順に数を並べる
+
+see: http://nabetani.sakura.ne.jp/hena/orde22numord/
