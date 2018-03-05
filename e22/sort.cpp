@@ -6,25 +6,28 @@
 #include <algorithm>
 
 int solve(int m,int n,int b,int x) {
-  std::vector<int> buf;
-  buf.resize(n-m+1);
-  for ( int i=0; i<=n-m; i++ ) {
-    buf[i]=m+i;
-  }
   std::vector<int64_t> wm;
-  for ( int64_t tmp=1; tmp<static_cast<int64_t>(n)*b; tmp*=b ) {
+  for ( int64_t tmp=1; tmp<=static_cast<int64_t>(n)*b; tmp*=b ) {
     wm.push_back(tmp);
   }
-  std::sort(
-    buf.begin(),
-    buf.end(),
-    [&wm](int a,int b) {
-      auto da=std::distance(wm.rbegin(),std::find_if(wm.rbegin(),wm.rend(),[a](int64_t x){ return a>=x; }));
-      auto db=std::distance(wm.rbegin(),std::find_if(wm.rbegin(),wm.rend(),[b](int64_t x){ return b>=x; }));
-      return da<db ? a<wm[db-da]*b : wm[da-db]*a<=b;
+  auto dm=std::distance(wm.begin(),std::find_if(wm.begin(),wm.end(),[m,b](int64_t x){ return x*b>m; }));
+  auto dn=std::distance(wm.begin(),std::find_if(wm.begin(),wm.end(),[n,b](int64_t x){ return x*b>n; }));
+  auto dw=dn-dm+1;
+  auto r=*std::find_if(wm.begin(),wm.end(),[dw](int64_t x){ return x>=dw; });
+  std::vector<int64_t> buf;
+  buf.resize(n-m+1);
+  for ( int64_t is=0,d=dm; d<=dn; d++ ) {
+    auto ib=d==dm ? m : wm[d];
+    auto ie=d==dn ? n : wm[d+1]-1;
+    for ( int64_t i=ib; i<=ie; i++ ) {
+      buf[i-ib+is]=i*wm[dn-d]*r+d-dm;
     }
-  );
-  return buf[x-1];
+    is+=ie-ib+1;
+  }
+  std::sort(buf.begin(),buf.end());
+  auto y=buf[x-1];
+  auto d=y%r;
+  return (y-d)/(r*wm[dw-d-1]);
 }
 
 void test(int id, const char *input, const char *expected) {
