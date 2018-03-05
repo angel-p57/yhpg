@@ -17,8 +17,7 @@ int solve(int m,int n,int b,int x) {
   auto dw=dn-dm+1;
   // 桁数の幅を元に乗数決定
   auto r=*std::find_if(wm.begin(),wm.end(),[dw](int64_t x){ return x>=dw; });
-  std::vector<int64_t> buf;
-  buf.resize(n-m+1);
+  std::vector<int64_t> buf(n-m+1);
   // m～nを変換 ( b進数での桁数を揃えるように ) してbufに格納
   for ( int64_t is=0,d=dm; d<=dn; d++ ) {
     auto ib=d==dm ? m : wm[d];
