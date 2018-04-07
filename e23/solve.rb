@@ -3,14 +3,10 @@ def solve input
   n,s=input.split(?,)
   a,n=0,n.to_i-1
   s.reverse.chars{|c|
-    case c
-    when ?a
-      n,r=n.divmod(4)
-      a+=(r+1)%3-1
-    when ?b
-      n,r=n.divmod(5)
-      a+=r%2*(2-r)
-    end
+    b=c.ord-93
+    n,r=n.divmod(b)
+    r=(r+1)%(b-1)-1
+    a+=r if r.abs==1
   }
   n>0 ? ?x : "0+-"[a%3]
 end
