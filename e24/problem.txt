@@ -1,0 +1,5 @@
+# yhpg e23 2018.5.26
+## 問題
+単調増加数
+
+see: http://nabetani.sakura.ne.jp/hena/orde24tancho/
