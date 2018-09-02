@@ -144,11 +144,11 @@ def gauss(n)
     if rbase=(i...n).find{|j| m1[j,i].odd? }
       m1,m2=m1.exrow(i,rbase),m2.exrow(i,rbase)
       c=m1[i,i]
-      cs=n.times.map{|j| i==j ? c : m1[j,i]*c }
+      cs=n.times.map{|j| j<i ? 0 : i==j ? c : m1[j,i]*c }
       m1,m2=m1.subrow(i,cs),m2.subrow(i,cs)
     elsif rbase=(i...n).find{|j| m1[j,i]==2 } 
       m1,m2=m1.exrow(i,rbase),m2.exrow(i,rbase)
-      cs=n.times.map{|j| m1[j,i]/2 }
+      cs=n.times.map{|j| j<i ? 0 : m1[j,i]/2 }
       m1,m2=m1.subrow(i,cs),m2.subrow(i,cs)
     end
   }
