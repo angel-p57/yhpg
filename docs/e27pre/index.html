@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Light and mirrors #yhpg e27pre 2018.10.6</title>
+<style>
+  body, textarea {
+    font-family: sans-serif;
+    font-size:11pt;
+  }
+  textarea {
+    font-size:7pt;
+    width:80%;
+    height:7em;
+  }
+  img.large{
+    width:400px;
+  }
+  td.center{ text-align:center; }
+  tr:nth-child(even) { background-color: #fafafa }
+  tr:nth-child(odd) { background-color: #f0f0f0 }
+  code {
+    background-color: #d8d8d8;
+    font-family:monospace;
+    padding:2pt 2pt 2pt 2pt ;
+    border-radius:4px;
+  }
+  h1{
+    border-top : solid 2px #bbb;
+    border-left : solid 16px #bbb;
+    background-color: #f8f8f8;
+  }
+  h2{
+    border-top : solid 2px #bbb;
+    border-left : solid 8px #bbb;
+    background-color: #f8f8f8;
+  }
+  h3{
+    background-color: #f8f8f8;
+  }
+  h4{
+    background-color: #f8f8f8;
+  }
+  code.src, code.expected{
+    word-break: break-all;
+    font-family:"Ricty","Courier New";
+  }
+  img.sample{
+  width:150px;
+  height:150px;
+  }
+  img.top{
+  width:320px;
+  }
+  .weight{
+    font-family:"Georgia";
+    padding-left:8px;
+    padding-right:8px;
+  }
+  table.float_right
+  {
+    float: right;
+  }
+  table.float_right td{
+    background-color:white;
+    text-align:center;
+  }
+  .narrow{
+    font-family:"Ricty","Courier New";
+    font-size:9pt;
+  }
+  float_right{
+   float:right;
+  }
+  div.svg{
+   float:right;
+   background-color:white;
+  }
+  td.bigcell{
+    width:25mm;
+    height:25mm;
+    font-size:18mm;
+    border:solid black 0.5mm
+  }
+  table.big td{
+    font-size:9mm;
+    border:solid black 0.5mm
+  }
+  div.top img{
+    width:80px;
+  }
+  table.big img{
+    width:120px;
+    height:120px;
+   }
+   td.sample{
+   }
+  table.nabenum tr td
+  {
+    background-color:#444;
+    padding:0 0 0 0;
+    margin:0 0 0 0;
+  }
+  table.nabenum
+  {
+    padding:1mm 2mm 1mm 2mm;
+    background-color:#444;
+  }
+  table.nabenum .c0{
+    width:4px;
+  }
+  table.nabenum .c1{
+    width:15px;
+  }
+  table.nabenum .c2{
+    width:4px;
+  }
+  table.nabenum tr.n0 td{
+    height:4px;
+  }
+  table.nabenum tr.n1 td{
+    height:15px;
+  }
+  table.nabenum tr.n2 td{
+    height:4px;
+  }
+  table.nabenum tr.n3 td{
+    height:15px;
+  }
+  table.nabenum tr.n4 td{
+    height:4px;
+  }
+  table.nabenum td.off{
+    background-color:black;
+  }
+  table.nabenum td.on{
+    background-color:white;
+  }
+  table.nabenum td.nazo{
+    background-color:#f00;
+  }
+  table.outer > tbody > tr > td{
+    border-left: black solid 1px;
+    vertical-align:top;
+  }
+  table.tet tr{
+    background-color:white;
+  }
+  div.nabe{
+    float:right;
+    width:200px;
+    background-color:#eee;
+    text-align:center;
+  }
+  .nabe_c{
+    text-align:center;
+    }
+  div.main_fig{
+   float:right;
+   background-color:white;
+  }
+</style>
+</head>
+<body>
+<header style="color:red;">
+<ul>
+<li>original: by <a href="https://twitter.com/Nabetani">@Nabetani</a>, at <a href="http://nabetani.sakura.ne.jp/hena/orde27ligmir/index.html">http://nabetani.sakura.ne.jp/hena/orde27ligmir/index.html</a></li>
+<li>translated: by <a href="https://twitter.com/angel_p_57">@angel_p_57</a></li>
+</ul>
+</header>
+<h1>Light and mirrors #yhpg e27pre 2018.10.6</h1>
+<div class='main_fig'>
+<svg height='410.0px' viewBox='-10.0 -10.0 410.0 410.0' width='410.0px'>
+<g font-family='Arial' font-size='26.666666666666668' text-anchor='start'>
+<rect fill='#000' height='76.0' stroke='none' width='76.0' x='0.0' y='0.0'></rect>
+<rect fill='#eee' height='76.0' stroke='none' width='76.0' x='80.0' y='0.0'></rect>
+<rect fill='#eee' height='76.0' stroke='none' width='76.0' x='160.0' y='0.0'></rect>
+<rect fill='#eee' height='76.0' stroke='none' width='76.0' x='240.0' y='0.0'></rect>
+<rect fill='#000' height='76.0' stroke='none' width='76.0' x='320.0' y='0.0'></rect>
+<rect fill='#eee' height='76.0' stroke='none' width='76.0' x='0.0' y='80.0'></rect>
+<rect fill='#eee' height='76.0' stroke='none' width='76.0' x='80.0' y='80.0'></rect>
+<rect fill='#eee' height='76.0' stroke='none' width='76.0' x='160.0' y='80.0'></rect>
+<rect fill='#eee' height='76.0' stroke='none' width='76.0' x='240.0' y='80.0'></rect>
+<rect fill='#eee' height='76.0' stroke='none' width='76.0' x='320.0' y='80.0'></rect>
+<rect fill='#eee' height='76.0' stroke='none' width='76.0' x='0.0' y='160.0'></rect>
+<rect fill='#eee' height='76.0' stroke='none' width='76.0' x='80.0' y='160.0'></rect>
+<rect fill='#eee' height='76.0' stroke='none' width='76.0' x='160.0' y='160.0'></rect>
+<rect fill='#eee' height='76.0' stroke='none' width='76.0' x='240.0' y='160.0'></rect>
+<rect fill='#eee' height='76.0' stroke='none' width='76.0' x='320.0' y='160.0'></rect>
+<rect fill='#eee' height='76.0' stroke='none' width='76.0' x='0.0' y='240.0'></rect>
+<rect fill='#eee' height='76.0' stroke='none' width='76.0' x='80.0' y='240.0'></rect>
+<rect fill='#eee' height='76.0' stroke='none' width='76.0' x='160.0' y='240.0'></rect>
+<rect fill='#eee' height='76.0' stroke='none' width='76.0' x='240.0' y='240.0'></rect>
+<rect fill='#eee' height='76.0' stroke='none' width='76.0' x='320.0' y='240.0'></rect>
+<rect fill='#eee' height='76.0' stroke='none' width='76.0' x='0.0' y='320.0'></rect>
+<rect fill='#eee' height='76.0' stroke='none' width='76.0' x='80.0' y='320.0'></rect>
+<rect fill='#eee' height='76.0' stroke='none' width='76.0' x='160.0' y='320.0'></rect>
+<rect fill='#000' height='76.0' stroke='none' width='76.0' x='240.0' y='320.0'></rect>
+<rect fill='#eee' height='76.0' stroke='none' width='76.0' x='320.0' y='320.0'></rect>
+<line stroke-width='4.0' stroke='#0F0' x1='118.0' x2='118.0' y1='278.0' y2='198.0'></line>
+<line stroke-width='4.0' stroke='#0F0' x1='118.0' x2='118.0' y1='198.0' y2='118.0'></line>
+<line stroke-width='4.0' stroke='#0F0' x1='118.0' x2='198.0' y1='118.0' y2='118.0'></line>
+<line stroke-width='4.0' stroke='#0F0' x1='198.0' x2='278.0' y1='118.0' y2='118.0'></line>
+<line stroke-width='4.0' stroke='#0F0' x1='278.0' x2='278.0' y1='118.0' y2='198.0'></line>
+<line stroke-width='4.0' stroke='#0F0' x1='278.0' x2='278.0' y1='198.0' y2='278.0'></line>
+<line stroke-width='4.0' stroke='#0F0' x1='278.0' x2='278.0' y1='278.0' y2='318.0'></line>
+<text fill='#fff' x='0.0' y='48.0'>a</text>
+<text fill='#000' x='80.0' y='48.0'>b</text>
+<text fill='#000' x='160.0' y='48.0'>c</text>
+<text fill='#000' x='240.0' y='48.0'>d</text>
+<text fill='#fff' x='320.0' y='48.0'>e</text>
+<text fill='#000' x='0.0' y='128.0'>f</text>
+<text fill='#000' x='80.0' y='128.0'>g</text>
+<line stroke-width='8.0' stroke='#000' x1='80.0' x2='156.0' y1='156.0' y2='80.0'></line>
+<text fill='#000' x='160.0' y='128.0'>h</text>
+<text fill='#000' x='240.0' y='128.0'>i</text>
+<line stroke-width='8.0' stroke='#000' x1='240.0' x2='316.0' y1='80.0' y2='156.0'></line>
+<text fill='#000' x='320.0' y='128.0'>j</text>
+<text fill='#000' x='0.0' y='208.0'>k</text>
+<text fill='#000' x='80.0' y='208.0'>l</text>
+<text fill='#000' x='160.0' y='208.0'>m</text>
+<line stroke-width='8.0' stroke='#000' x1='160.0' x2='236.0' y1='160.0' y2='236.0'></line>
+<text fill='#000' x='240.0' y='208.0'>n</text>
+<text fill='#000' x='320.0' y='208.0'>o</text>
+<text fill='#000' x='0.0' y='288.0'>p</text>
+<text fill='#000' x='80.0' y='288.0'>q</text>
+<circle cx='118.0' cy='278.0' r='20.0'></circle>
+<text fill='#000' x='160.0' y='288.0'>r</text>
+<text fill='#000' x='240.0' y='288.0'>s</text>
+<text fill='#000' x='320.0' y='288.0'>t</text>
+<text fill='#000' x='0.0' y='368.0'>u</text>
+<line stroke-width='8.0' stroke='#000' x1='0.0' x2='76.0' y1='320.0' y2='396.0'></line>
+<text fill='#000' x='80.0' y='368.0'>v</text>
+<text fill='#000' x='160.0' y='368.0'>w</text>
+<text fill='#fff' x='240.0' y='368.0'>x</text>
+<text fill='#000' x='320.0' y='368.0'>y</text>
+</g>
+</svg>
+</div>
+<h2>Abstract</h2>
+<p>
+Given that there exists 5x5 squares named "a" thru "y" like the figure at right.
+<br>
+Each square is one of;
+</p>
+<ul>
+<li>a blank</li>
+<li>one with a double sided mirror placed along the diagnol line whose left end is up and right end is down</li>
+<li>one with a double sided mirror placed along the diagnol line whose right end is up and left end is down</li>
+<li>one absorbing any light</li>
+<li>the place you stand</li>
+</ul>
+<p>
+When you beam a light up straight ( to the north direction ), find the all squares the light pass through.
+</p>
+<h2>Mission</h2>
+<p>Your mission is to write a program which solves this problem.</p>
+<p>You can write one in any language, and you can execute it on any environment ( i.e, on your PC, on some online IDE, etc. ), and you can spend as much CPU time or memory as you can prepare. There is no restrictions.</p>
+<p>And you can choose, as you like, how the program receives the input parameters and outputs the answers.<br>
+For example, <a href="https://ideone.com/OvLlBH">angel_p_57's Brainf**k program</a> receives input parameters from STDIN, and simply output the answers to STDOUT.<br>
+But I prepared <a href="#test_template">a test template for C/C++/Java</a> and <a href="#jsondata">a JSON test data file</a> both of which contain all input parameters and the correct answers. They could be helpful for you.</p>
+<p>After you solve this problem, I'd be very glad if you'd make a comment, including a link to your source, at <a href='https://qiita.com/Nabetani/items/0b2f459ec128c89948f4'>the article in Qiita</a>.</p>
+<h2>Input parameter's format</h2>
+<p>
+Each input parameter, which describes a set of 5x5 squares, is a string like this;
+<br>
+<code>x...x/.1.0./..0../.Y.../0..x.</code>
+<br>
+The string is slash-separated, and each separated chunk, which describes the corresponding row in the squares, consists of 5 ASCII characters mapped to the types of the squares in the row.<br>
+Each chunks appeared in a top-to-down ( north-to-south ) order, and each characters in a left-to-right ( west-to-east ) order.
+<br>
+The mapping is as follows;
+</p>
+<table>
+<tr>
+<th>Character</th>
+<th>Square type</th>
+</tr>
+<tr>
+<td>
+<code>.</code>
+</td>
+<td>A blank. This absolutely pass through light.</td>
+</tr>
+<tr>
+<td>
+<code>0</code>
+</td>
+<td>One with a double sided mirror placed along the diagnol line whose left end is up and right end is down</td>
+</tr>
+<tr>
+<td>
+<code>1</code>
+</td>
+<td>One with a double sided mirror placed along the diagnol line whose right end is up and left end is down</td>
+</tr>
+<tr>
+<td>
+<code>x</code>
+</td>
+<td>One absorbing any light</td>
+</tr>
+<tr>
+<td>
+<code>Y</code>
+</td>
+<td>The place you stand. This also pass through light.</td>
+</tr>
+</table>
+<h2>Output format</h2>
+<p>
+Each output ( answer ) should be a string like this;
+<br>
+<code>ghilnqs</code>
+<br>
+It should have all the alphabet names of the squares at which the light pass through, with no duplicates, in a alphabetical ascending order.
+</p>
+<h2>Additional Info</h2>
+<ul>
+<li>There is no invalid input parameters. You can count on it.</li>
+<li>You are alone in each case. In other words, there is one and only one square at which you stands.</li>
+<li>Don't think if the light may fade or diffuse.</li>
+<li>All the angles between the mirrors and the edges of the squares are exactly 45 degree.</li>
+<li>If the light go out of 5x5 squares, then it won't come back. You can treat it disappeared.</li>
+<li>This problem is somewhat a trial for the next #yhpg e27. The problem will be easy/difficult as this problem.</li>
+<li>#yhpg e27 is scheduled at 2018.10.6 in Tokyo. Refer to <a href="https://yhpg.doorkeeper.jp/events/79705">the event information page in Doorkeeper</a>.
+</li>
+</ul>
+<h2>Problem cases</h2>
+<table class='sample'>
+<tr>
+<th>#</th>
+<th>Input</th>
+<th>Correct output</th>
+<th>Link to the figure which shows the case</th>
+</tr>
+<tr>
+<td>0</td>
+<td class='sample'>
+<code class='src'>x...x/.1.0./..0../.Y.../0..x.</code>
+</td>
+<td>
+<code class='expected'>ghilnqs</code>
+</td>
+<td>
+<a href='figs.html#0'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>1</td>
+<td class='sample'>
+<code class='src'>..Y../...../...../...../.....</code>
+</td>
+<td>
+<code class='expected'>c</code>
+</td>
+<td>
+<a href='figs.html#1'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>2</td>
+<td class='sample'>
+<code class='src'>..x../..Y../...../...../.....</code>
+</td>
+<td>
+<code class='expected'>h</code>
+</td>
+<td>
+<a href='figs.html#2'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>3</td>
+<td class='sample'>
+<code class='src'>..Y.x/..1x0/11.../....0/1..1.</code>
+</td>
+<td>
+<code class='expected'>c</code>
+</td>
+<td>
+<a href='figs.html#3'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>4</td>
+<td class='sample'>
+<code class='src'>....1/....Y/...../...../.....</code>
+</td>
+<td>
+<code class='expected'>ej</code>
+</td>
+<td>
+<a href='figs.html#4'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>5</td>
+<td class='sample'>
+<code class='src'>.10../x.1../x.1x./.Y.1./...0.</code>
+</td>
+<td>
+<code class='expected'>bcghlq</code>
+</td>
+<td>
+<a href='figs.html#5'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>6</td>
+<td class='sample'>
+<code class='src'>0.x10/00..x/x0x.0/....0/...Y1</code>
+</td>
+<td>
+<code class='expected'>deinsx</code>
+</td>
+<td>
+<a href='figs.html#6'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>7</td>
+<td class='sample'>
+<code class='src'>1.01./01Y.1/..1.1/..10./0.0..</code>
+</td>
+<td>
+<code class='expected'>abcfgh</code>
+</td>
+<td>
+<a href='figs.html#7'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>8</td>
+<td class='sample'>
+<code class='src'>x..../x1x../0...0/....Y/.1..0</code>
+</td>
+<td>
+<code class='expected'>klmnot</code>
+</td>
+<td>
+<a href='figs.html#8'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>9</td>
+<td class='sample'>
+<code class='src'>...../..10./.1Y1./.01../.....</code>
+</td>
+<td>
+<code class='expected'>hilmnqr</code>
+</td>
+<td>
+<a href='figs.html#9'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>10</td>
+<td class='sample'>
+<code class='src'>...../..10./x.11./...../..Y..</code>
+</td>
+<td>
+<code class='expected'>hilmnrw</code>
+</td>
+<td>
+<a href='figs.html#10'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>11</td>
+<td class='sample'>
+<code class='src'>...../x.10x/...../x.Y1x/.....</code>
+</td>
+<td>
+<code class='expected'>himnqrs</code>
+</td>
+<td>
+<a href='figs.html#11'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>12</td>
+<td class='sample'>
+<code class='src'>..010/...Y1/..0../0.x../.....</code>
+</td>
+<td>
+<code class='expected'>defghij</code>
+</td>
+<td>
+<a href='figs.html#12'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>13</td>
+<td class='sample'>
+<code class='src'>1.0../...../.0x../Y.1x./..1..</code>
+</td>
+<td>
+<code class='expected'>abcfhkp</code>
+</td>
+<td>
+<a href='figs.html#13'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>14</td>
+<td class='sample'>
+<code class='src'>...../101../0.0../..Y../.....</code>
+</td>
+<td>
+<code class='expected'>fgklmqrv</code>
+</td>
+<td>
+<a href='figs.html#14'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>15</td>
+<td class='sample'>
+<code class='src'>1.0../00.../.x..0/0.Y1./...10</code>
+</td>
+<td>
+<code class='expected'>abcfghmr</code>
+</td>
+<td>
+<a href='figs.html#15'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>16</td>
+<td class='sample'>
+<code class='src'>x101./1..../.Y.x./..01./.00.1</code>
+</td>
+<td>
+<code class='expected'>bcghlmrs</code>
+</td>
+<td>
+<a href='figs.html#16'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>17</td>
+<td class='sample'>
+<code class='src'>x11../x.x../.0.01/..x../...Y.</code>
+</td>
+<td>
+<code class='expected'>bcglmnsx</code>
+</td>
+<td>
+<a href='figs.html#17'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>18</td>
+<td class='sample'>
+<code class='src'>..1.0/x0.x./0.0../x...Y/.10.1</code>
+</td>
+<td>
+<code class='expected'>cdehjmnot</code>
+</td>
+<td>
+<a href='figs.html#18'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>19</td>
+<td class='sample'>
+<code class='src'>..x.0/.0.../1..0x/1..1./Y.00.</code>
+</td>
+<td>
+<code class='expected'>klmnpqrsu</code>
+</td>
+<td>
+<a href='figs.html#19'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>20</td>
+<td class='sample'>
+<code class='src'>0.1.0/.0.xY/0...0/01..1/x00.x</code>
+</td>
+<td>
+<code class='expected'>cdehjmrwx</code>
+</td>
+<td>
+<a href='figs.html#20'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>21</td>
+<td class='sample'>
+<code class='src'>...0./.0.0./..101/...10/..01Y</code>
+</td>
+<td>
+<code class='expected'>mnpqrstwxy</code>
+</td>
+<td>
+<a href='figs.html#21'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>22</td>
+<td class='sample'>
+<code class='src'>10..0/.Y.0./0..1./....x/000..</code>
+</td>
+<td>
+<code class='expected'>abfghiklmn</code>
+</td>
+<td>
+<a href='figs.html#22'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>23</td>
+<td class='sample'>
+<code class='src'>10..1/...../.1010/110.1/x..Yx</code>
+</td>
+<td>
+<code class='expected'>lmnopqrstx</code>
+</td>
+<td>
+<a href='figs.html#23'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>24</td>
+<td class='sample'>
+<code class='src'>110../....1/x1..x/0.0.0/....Y</code>
+</td>
+<td>
+<code class='expected'>bcghlmrsty</code>
+</td>
+<td>
+<a href='figs.html#24'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>25</td>
+<td class='sample'>
+<code class='src'>x.101/1..../..001/010Yx/..1.1</code>
+</td>
+<td>
+<code class='expected'>cdehijmnos</code>
+</td>
+<td>
+<a href='figs.html#25'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>26</td>
+<td class='sample'>
+<code class='src'>x.111/x10../...0./00.1x/x.Y.1</code>
+</td>
+<td>
+<code class='expected'>ghklmnqrsw</code>
+</td>
+<td>
+<a href='figs.html#26'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>27</td>
+<td class='sample'>
+<code class='src'>11.../....0/11..1/1.1../.Y..1</code>
+</td>
+<td>
+<code class='expected'>fghijlmnoqv</code>
+</td>
+<td>
+<a href='figs.html#27'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>28</td>
+<td class='sample'>
+<code class='src'>...x1/.1.0./11.1./.01../Y..x.</code>
+</td>
+<td>
+<code class='expected'>cghiklmnpqru</code>
+</td>
+<td>
+<a href='figs.html#28'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>29</td>
+<td class='sample'>
+<code class='src'>.0.../110x./11..0/01.x./..Y.x</code>
+</td>
+<td>
+<code class='expected'>ghklmnopqrtw</code>
+</td>
+<td>
+<a href='figs.html#29'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>30</td>
+<td class='sample'>
+<code class='src'>.01.0/.110x/0...0/.01Y./x.1x.</code>
+</td>
+<td>
+<code class='expected'>cdeghilmnqrs</code>
+</td>
+<td>
+<a href='figs.html#30'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>31</td>
+<td class='sample'>
+<code class='src'>.1100/..1.0/1.11Y/0..1./.0..0</code>
+</td>
+<td>
+<code class='expected'>hijklmnopqrs</code>
+</td>
+<td>
+<a href='figs.html#31'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>32</td>
+<td class='sample'>
+<code class='src'>1..00/..11./.100./1..Y1/.....</code>
+</td>
+<td>
+<code class='expected'>abcdfhikmnps</code>
+</td>
+<td>
+<a href='figs.html#32'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>33</td>
+<td class='sample'>
+<code class='src'>1.0../.11x0/.00.x/Y.10./.10x0</code>
+</td>
+<td>
+<code class='expected'>abcfghklmpqr</code>
+</td>
+<td>
+<a href='figs.html#33'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>34</td>
+<td class='sample'>
+<code class='src'>11110/11.../.x.../.0111/0.Y0.</code>
+</td>
+<td>
+<code class='expected'>deijnorstwxy</code>
+</td>
+<td>
+<a href='figs.html#34'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>35</td>
+<td class='sample'>
+<code class='src'>...1./.1.0x/10..0/0Y.11/.0.x0</code>
+</td>
+<td>
+<code class='expected'>ghiklmnopqrst</code>
+</td>
+<td>
+<a href='figs.html#35'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>36</td>
+<td class='sample'>
+<code class='src'>...10/x111./0x.11/.0.../0.0Y.</code>
+</td>
+<td>
+<code class='expected'>dehijmnorswxy</code>
+</td>
+<td>
+<a href='figs.html#36'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>37</td>
+<td class='sample'>
+<code class='src'>.1x../.x1.0/0x.x./x11.1/x0Y.1</code>
+</td>
+<td>
+<code class='expected'>hijmoqrstvwxy</code>
+</td>
+<td>
+<a href='figs.html#37'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>38</td>
+<td class='sample'>
+<code class='src'>x.x../x110./1.1.0/0.Y.1/0.00x</code>
+</td>
+<td>
+<code class='expected'>hiklmnopqrstx</code>
+</td>
+<td>
+<a href='figs.html#38'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>39</td>
+<td class='sample'>
+<code class='src'>...0./11.00/10..x/..0.1/Y0.10</code>
+</td>
+<td>
+<code class='expected'>ghiklmnpqsuvwx</code>
+</td>
+<td>
+<a href='figs.html#39'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>40</td>
+<td class='sample'>
+<code class='src'>.110./....0/x..../.0001/11.Y.</code>
+</td>
+<td>
+<code class='expected'>cdfghijmnorstx</code>
+</td>
+<td>
+<a href='figs.html#40'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>41</td>
+<td class='sample'>
+<code class='src'>1.00./....1/.1.../0...0/0..1Y</code>
+</td>
+<td>
+<code class='expected'>abcfhkmpqrstwy</code>
+</td>
+<td>
+<a href='figs.html#41'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>42</td>
+<td class='sample'>
+<code class='src'>.1.01/..x../..100/..Y../...01</code>
+</td>
+<td>
+<code class='expected'>bcdgilmnoqrstvxy</code>
+</td>
+<td>
+<a href='figs.html#42'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>43</td>
+<td class='sample'>
+<code class='src'>1...0/Y..../...../...../0...1</code>
+</td>
+<td>
+<code class='expected'>abcdefjkoptuvwxy</code>
+</td>
+<td>
+<a href='figs.html#43'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>44</td>
+<td class='sample'>
+<code class='src'>x1..0/1..0./.Yx../0...1/.0.1.</code>
+</td>
+<td>
+<code class='expected'>bcdefghijklnopqrstvwx</code>
+</td>
+<td>
+<a href='figs.html#44'>follow this link</a>
+</td>
+</tr>
+<tr>
+<td>45</td>
+<td class='sample'>
+<code class='src'>1...0/.1.0./..1../..01./Y0..1</code>
+</td>
+<td>
+<code class='expected'>abcdefghijklmnopqrstuvwxy</code>
+</td>
+<td>
+<a href='figs.html#45'>follow this link</a>
+</td>
+</tr>
+</table>
+<h2 id="test_template">Test template for C/C++/Java</h2>
+<textarea>/*0*/ test( "x...x/.1.0./..0../.Y.../0..x.", "ghilnqs" );
+/*1*/ test( "..Y../...../...../...../.....", "c" );
+/*2*/ test( "..x../..Y../...../...../.....", "h" );
+/*3*/ test( "..Y.x/..1x0/11.../....0/1..1.", "c" );
+/*4*/ test( "....1/....Y/...../...../.....", "ej" );
+/*5*/ test( ".10../x.1../x.1x./.Y.1./...0.", "bcghlq" );
+/*6*/ test( "0.x10/00..x/x0x.0/....0/...Y1", "deinsx" );
+/*7*/ test( "1.01./01Y.1/..1.1/..10./0.0..", "abcfgh" );
+/*8*/ test( "x..../x1x../0...0/....Y/.1..0", "klmnot" );
+/*9*/ test( "...../..10./.1Y1./.01../.....", "hilmnqr" );
+/*10*/ test( "...../..10./x.11./...../..Y..", "hilmnrw" );
+/*11*/ test( "...../x.10x/...../x.Y1x/.....", "himnqrs" );
+/*12*/ test( "..010/...Y1/..0../0.x../.....", "defghij" );
+/*13*/ test( "1.0../...../.0x../Y.1x./..1..", "abcfhkp" );
+/*14*/ test( "...../101../0.0../..Y../.....", "fgklmqrv" );
+/*15*/ test( "1.0../00.../.x..0/0.Y1./...10", "abcfghmr" );
+/*16*/ test( "x101./1..../.Y.x./..01./.00.1", "bcghlmrs" );
+/*17*/ test( "x11../x.x../.0.01/..x../...Y.", "bcglmnsx" );
+/*18*/ test( "..1.0/x0.x./0.0../x...Y/.10.1", "cdehjmnot" );
+/*19*/ test( "..x.0/.0.../1..0x/1..1./Y.00.", "klmnpqrsu" );
+/*20*/ test( "0.1.0/.0.xY/0...0/01..1/x00.x", "cdehjmrwx" );
+/*21*/ test( "...0./.0.0./..101/...10/..01Y", "mnpqrstwxy" );
+/*22*/ test( "10..0/.Y.0./0..1./....x/000..", "abfghiklmn" );
+/*23*/ test( "10..1/...../.1010/110.1/x..Yx", "lmnopqrstx" );
+/*24*/ test( "110../....1/x1..x/0.0.0/....Y", "bcghlmrsty" );
+/*25*/ test( "x.101/1..../..001/010Yx/..1.1", "cdehijmnos" );
+/*26*/ test( "x.111/x10../...0./00.1x/x.Y.1", "ghklmnqrsw" );
+/*27*/ test( "11.../....0/11..1/1.1../.Y..1", "fghijlmnoqv" );
+/*28*/ test( "...x1/.1.0./11.1./.01../Y..x.", "cghiklmnpqru" );
+/*29*/ test( ".0.../110x./11..0/01.x./..Y.x", "ghklmnopqrtw" );
+/*30*/ test( ".01.0/.110x/0...0/.01Y./x.1x.", "cdeghilmnqrs" );
+/*31*/ test( ".1100/..1.0/1.11Y/0..1./.0..0", "hijklmnopqrs" );
+/*32*/ test( "1..00/..11./.100./1..Y1/.....", "abcdfhikmnps" );
+/*33*/ test( "1.0../.11x0/.00.x/Y.10./.10x0", "abcfghklmpqr" );
+/*34*/ test( "11110/11.../.x.../.0111/0.Y0.", "deijnorstwxy" );
+/*35*/ test( "...1./.1.0x/10..0/0Y.11/.0.x0", "ghiklmnopqrst" );
+/*36*/ test( "...10/x111./0x.11/.0.../0.0Y.", "dehijmnorswxy" );
+/*37*/ test( ".1x../.x1.0/0x.x./x11.1/x0Y.1", "hijmoqrstvwxy" );
+/*38*/ test( "x.x../x110./1.1.0/0.Y.1/0.00x", "hiklmnopqrstx" );
+/*39*/ test( "...0./11.00/10..x/..0.1/Y0.10", "ghiklmnpqsuvwx" );
+/*40*/ test( ".110./....0/x..../.0001/11.Y.", "cdfghijmnorstx" );
+/*41*/ test( "1.00./....1/.1.../0...0/0..1Y", "abcfhkmpqrstwy" );
+/*42*/ test( ".1.01/..x../..100/..Y../...01", "bcdgilmnoqrstvxy" );
+/*43*/ test( "1...0/Y..../...../...../0...1", "abcdefjkoptuvwxy" );
+/*44*/ test( "x1..0/1..0./.Yx../0...1/.0.1.", "bcdefghijklnopqrstvwx" );
+/*45*/ test( "1...0/.1.0./..1../..01./Y0..1", "abcdefghijklmnopqrstuvwxy" );</textarea>
+<h2 id="jsondata">JSON test data</h2>
+<p>
+<a href='data.json'>data.json</a>
+</p>
+</body>
+</html>
