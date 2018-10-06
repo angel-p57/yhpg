@@ -4,9 +4,8 @@ def solve input
     (f=->c,s=0{
       [1,10].each{|d|
         c.each{|b|
-          8.times.with_object(c.dup){|i,c2|
-            c2.delete(b) or break
-            b+=d
+          b.step(by:d).with_index.with_object(c.dup){|(t,i),c2|
+            c2.delete(t) or break
             c2.empty? ? y<<s+i*i : f[c2,s+i*i] if i>0
           }
         }
