@@ -1,6 +1,6 @@
 def solve input
   # implement
-  input.scan(/(['"])((.*?)\1)?|(\w+)|(\/)(\/)?/).each_with_object([""]){|m,r|
+  (input+"''/").scan(/(['"])((.*?)\1)?|(\w+)|(\/)(\/)?/).each_with_object([""]){|m,r|
     return ?- if m[0]&&!m[1]
     if m[4]&&!m[5]
       return ?- if r[-1].empty?
@@ -8,7 +8,7 @@ def solve input
     else
       r[-1]+=m[2]||m[3]||m[4]
     end
-  }.tap{|e| return ?- if e[-1].empty? }*?,
+  }[0..-2]*?,
 end
 
 def test(n,input,expected)
