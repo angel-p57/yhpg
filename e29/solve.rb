@@ -14,7 +14,7 @@ def solve input
   }
   s.empty? || s[/(^\/|\/$)/] and return ?-
   s.split(?/).map{|t|
-    t.gsub(/%(\d+)_/){|m| dict[m[1].to_i] }.tap{|s| return ?- if s.empty? }
+    t.gsub(/%(\d+)_/){|_| dict[$1.to_i] }.tap{|s| return ?- if s.empty? }
   }*?,
 end
 
