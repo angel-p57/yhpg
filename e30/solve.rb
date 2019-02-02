@@ -2,14 +2,13 @@ def solve input
   # implement
   *ws,m=input.split(/\D/).map &:to_i
   buf=ws.map{[]}
-  f,g=
-    ->i,j{ buf[i][j]||=g[i,j] },
-    ->i,j{
+  (f=->i,j{
+    buf[i][j]||=->i,j{
       return j+1 if i==0
       t=(j*ws[i]/ws[i-1]-1 .. ((j+1)*ws[i]-1)/ws[i-1]+1).map{|k| k<0 ? 0 : f[i-1,k] }
       (1..t.size-2).reduce(0){|s,k| t[k]==t[k-1]&&t[k]==t[k+1] ? s : s+t[k] } % 1000
-    }
-  f[ws.size-1,m-1]
+    }[i,j]
+  })[ws.size-1,m-1]
 end
 
 def test(n,input,expected)
