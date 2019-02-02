@@ -1,0 +1,6 @@
+# yhpg e30 2019.2.2
+## 問題
+面白いセルの合計
+
+see: http://nabetani.sakura.ne.jp/hena/orde30sumt/
+
