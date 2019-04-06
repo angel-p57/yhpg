@@ -1,0 +1,6 @@
+# yhpg e32 2019.4.6
+## 問題 きれいな四角
+
+
+see: http://nabetani.sakura.ne.jp/hena/orde32rects
+
